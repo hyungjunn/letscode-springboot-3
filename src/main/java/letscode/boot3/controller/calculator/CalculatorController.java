@@ -12,4 +12,9 @@ public class CalculatorController {
         return request.number1() + request.number2();
     }
 
+    @GetMapping("/sub") // HTTP method, HTTP PATH
+    public int subTwonumbers(CalculatorAddRequest request) {
+        return request.number1() - request.number2();
+    }
+
 }
