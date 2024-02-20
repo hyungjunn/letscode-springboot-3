@@ -13,7 +13,7 @@ public class CalculatorController {
     }
 
     @GetMapping("/sub") // HTTP method, HTTP PATH
-    public int subTwonumbers(CalculatorAddRequest request) {
+    public int subTwoNumbers(CalculatorAddRequest request) {
         return request.number1() - request.number2();
     }
 
