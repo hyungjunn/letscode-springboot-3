@@ -1,27 +1,27 @@
 package letscode.boot3.controller.calculator;
 
-import letscode.boot3.dto.calculator.request.CalculatorAddRequest;
-import letscode.boot3.dto.calculator.request.CalculatorMultiplyRequest;
-import letscode.boot3.dto.calculator.request.CalculatorSubRequest;
+import letscode.boot3.dto.calculator.request.CalculatorRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController // api 입구
+@RestController // 입구
 public class CalculatorController {
 
-    @GetMapping("/add") // HTTP method, HTTP PATH
-    public int addTwoNumbers(CalculatorAddRequest request) {
-        return request.number1() + request.number2();
+    @GetMapping("/add")
+    public int addTwoNumber(CalculatorRequest request) {
+        return request.getNumber1() + request.getNumber2();
     }
 
-    @GetMapping("/sub") // HTTP method, HTTP PATH
-    public int subTwoNumbers(CalculatorSubRequest request) {
-        return request.number1() - request.number2();
+    @GetMapping("/minus") // HTTP method, path
+    public int minusTwoNumber(CalculatorRequest request) { // 쿼리
+        return request.getNumber1() - request.getNumber2(); // 반환값
     }
 
-    @PostMapping("/multiply")
-    public int multiply(CalculatorMultiplyRequest request) {
-        return request.number1() * request.number2();
+    @PostMapping("/divide")
+    public int divideTwoNumber(@RequestBody CalculatorRequest request) {
+        return request.getNumber1() / request.getNumber2();
     }
+  
 }
