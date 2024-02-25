@@ -1,9 +1,11 @@
 package letscode.boot3.assignment5;
 
-import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class DiceGame {
-    int[] resultCounts = new int[6];
+
+    private static final int DICE_FACE = 6;
+    private final int[] resultCounts = new int[DICE_FACE];
 
     public static void main(String[] args) {
         System.out.print("숫자를 입력하세요 : ");
@@ -12,26 +14,20 @@ public class DiceGame {
     }
 
     private void startGame() {
-        determineRollCounts(inputNumber());
+        determineRollCounts(User.inputNumber());
         printResult();
     }
 
-    private int inputNumber() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
-    }
-
     private void determineRollCounts(int a) {
-        for (int i = 0; i < a; i++) {
-            int randomDiceFace = (int) (Math.random() * 6);
-            resultCounts[randomDiceFace]++;
-        }
+        IntStream.range(0, a)
+                .map(i -> (int) (Math.random() * DICE_FACE))
+                .forEach(randomDiceFace -> resultCounts[randomDiceFace]++);
     }
 
     private void printResult() {
-        for (int i = 0; i < resultCounts.length; i++) {
-            System.out.printf((i + 1) + "번 눈금이 %d번 나왔습니다.\n", resultCounts[i]);
-        }
+        IntStream.range(0, resultCounts.length).forEach(i ->
+                System.out.printf("%d번 눈금이 %d번 나왔습니다.\n", i + 1, resultCounts[i]));
+
     }
 
 }
