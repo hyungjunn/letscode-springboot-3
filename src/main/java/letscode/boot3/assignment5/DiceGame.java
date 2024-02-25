@@ -9,6 +9,11 @@ public class DiceGame {
         System.out.print("숫자를 입력하세요 : ");
     }
 
+    private void startGame() {
+        determineRollCounts(inputNumber());
+        printResult();
+    }
+
     private int inputNumber() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextInt();
