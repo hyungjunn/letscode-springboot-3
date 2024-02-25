@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController // 입구
 public class CalculatorController {
 
+    @GetMapping("/add")
+    public int addTwoNumber(CalculatorRequest request) {
+        return request.getNumber1() + request.getNumber2();
+    }
+
     @GetMapping("/minus") // HTTP method, path
     public int minusTwoNumber(CalculatorRequest request) { // 쿼리
         return request.getNumber1() - request.getNumber2(); // 반환값
