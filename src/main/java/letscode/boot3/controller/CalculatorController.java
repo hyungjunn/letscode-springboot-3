@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CalculatorController {
 
     @GetMapping("/minus") // HTTP method, path
-    public int addTwoNumber(CalculatorRequest request) { // 쿼리
+    public int minusTwoNumber(CalculatorRequest request) { // 쿼리
         return request.getNumber1() - request.getNumber2(); // 반환값
     }
 
