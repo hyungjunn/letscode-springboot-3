@@ -27,12 +27,9 @@ public class DiceGame {
             }
         }
 
-        System.out.printf("1번 눈금이 %d번 나왔습니다.\n", r1);
-        System.out.printf("2번 눈금이 %d번 나왔습니다.\n", r2);
-        System.out.printf("3번 눈금이 %d번 나왔습니다.\n", r3);
-        System.out.printf("4번 눈금이 %d번 나왔습니다.\n", r4);
-        System.out.printf("5번 눈금이 %d번 나왔습니다.\n", r5);
-        System.out.printf("6번 눈금이 %d번 나왔습니다.\n", r6);
+        for (int i = 0; i < rollCounts.length; i++) {
+            System.out.printf((i+1) + "번 눈금이 %d번 나왔습니다.\n", rollCounts[i + 1]);
+        }
     }
 
 }
