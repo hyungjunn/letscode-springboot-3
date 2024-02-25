@@ -7,6 +7,8 @@ public class DiceGame {
 
     public static void main(String[] args) {
         System.out.print("숫자를 입력하세요 : ");
+        DiceGame game = new DiceGame();
+        game.startGame();
     }
 
     private void startGame() {
@@ -28,7 +30,7 @@ public class DiceGame {
 
     private void printResult() {
         for (int i = 0; i < resultCounts.length; i++) {
-            System.out.printf((i + 1) + "번 눈금이 %d번 나왔습니다.\n", resultCounts[i + 1]);
+            System.out.printf((i + 1) + "번 눈금이 %d번 나왔습니다.\n", resultCounts[i]);
         }
     }
 
