@@ -23,4 +23,5 @@ public class CalculatorController {
     public int divideTwoNumber(@RequestBody CalculatorRequest request) {
         return request.getNumber1() / request.getNumber2();
     }
+  
 }
