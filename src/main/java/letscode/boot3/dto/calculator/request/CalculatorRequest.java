@@ -1,4 +1,4 @@
-package letscode.boot3.dto.request;
+package letscode.boot3.dto.calculator.request;
 
 public class CalculatorRequest {
     private final int number1;
