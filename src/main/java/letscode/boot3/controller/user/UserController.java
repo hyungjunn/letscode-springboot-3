@@ -47,14 +47,24 @@ public class UserController {
 
     @PutMapping("/user") // 업데이트
     public void updateUser(@RequestBody UserUpdateRequest request) {
+        String readSql = "SELECT * FROM user where name = ?";
+        boolean isUserNext = jdbcTemplate.query(readSql, (rs, rowNum) -> 0, request.getName()).isEmpty();
+        if (isUserNext) {
+            throw new IllegalArgumentException();
+        }
         String sql = "UPDATE user SET name = ? where id = ?";
         jdbcTemplate.update(sql, request.getName(), request.getId());
     }
 
     @DeleteMapping("/user") // 삭제
     public void deleteUser(@RequestParam String name) {
+        String readsql = "SELECT * FROM user where id = ?";
+        boolean isUserNotExist = jdbcTemplate.query(readsql, (rs, rowNum) -> 0, name).isEmpty();
+        if (isUserNotExist) {
+            throw new IllegalArgumentException();
+        }
         String sql = "DELETE FROM user WHERE name = ?";
-        jdbcTemplate.update(sql, name);
+        jdbcTemplate.update(sql, name); // data를 변경이라기보다 그냥 다룰 때 update문을 씀
     }
   
 }
