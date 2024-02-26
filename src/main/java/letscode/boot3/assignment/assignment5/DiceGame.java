@@ -1,4 +1,4 @@
-package letscode.boot3.assignment5;
+package letscode.boot3.assignment.assignment5;
 
 import java.util.stream.IntStream;
 

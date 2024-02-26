@@ -1,4 +1,4 @@
-package letscode.boot3.day;
+package letscode.boot3.assignment.assignment2.day;
 
 import java.time.LocalDate;
 import java.time.format.TextStyle;
