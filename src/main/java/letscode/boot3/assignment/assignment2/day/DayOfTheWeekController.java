@@ -1,4 +1,4 @@
-package letscode.boot3.day;
+package letscode.boot3.assignment.assignment2.day;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
