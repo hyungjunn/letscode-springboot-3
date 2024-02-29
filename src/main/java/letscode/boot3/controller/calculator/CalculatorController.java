@@ -14,4 +14,5 @@ public class CalculatorController {
     public CalculatorResponse calculateTwoNumber(CalculatorRequest request) {
         return new CalculatorResponse(request);
     }
+  
 }
